@@ -1,0 +1,133 @@
+:root {
+  --light-gray: #F2F2F2;
+  --gray: #D3D3D3;
+  --blue: #F6F9FB;
+  --red: #E64439;
+  --white: #FFFFFF;
+  --orange: #FD9A24;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100svh;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+form {
+  height: 100%;
+}
+
+input {
+  margin-right: 1rem;
+  text-indent: 1rem;
+}
+
+li {
+  list-style: none;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: .01rem solid rgba(57, 55, 55, 0.5);
+}
+
+i {
+  float: right;
+}
+
+#container {
+  height: 100%;
+  padding: 2rem;
+  margin: auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 10fr 1fr;
+  grid-template-areas:
+    "header"
+    "task-input"
+    "tasks"
+    "delete";
+}
+
+#header {
+  display: grid;
+  grid-area: header;
+  font-size: 24px;
+  color: var(--orange);
+  text-shadow: .025rem .025rem .025rem var(--gray);
+}
+
+#add-task {
+  display: flex;
+  grid-area: task-input;
+  justify-content: center;
+}
+
+#task-input {
+  width: 70%;
+  padding-right: 3rem;
+  outline: 0;
+  background-color: var(--light-gray);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem var(--gray);
+}
+
+#add-task-button {
+  width: 30%;
+  margin-left: -3rem;
+  color: var(--white);
+  background-color: var(--red);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem var(--gray);
+}
+
+#display-tasks {
+  display: grid;
+  grid-area: tasks;
+  margin: 1.5rem 0;
+  overflow: scroll;
+}
+
+#task-items {
+  padding-left: 0;
+}
+
+#delete-task {
+  display: grid;
+  grid-area: delete;
+  justify-content: start;
+  align-items: end;
+}
+
+#delete-tasks-button {
+  height: 2.5rem;
+  width: 8rem;
+  color: var(--white);
+  background-color: var(--red);
+  border: none;
+  border-radius: 2rem;
+  box-shadow: .1rem .1rem var(--gray);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: var(--blue);
+  }
+
+  #container {
+    height: 80%;
+    width: 600px;
+    margin: 5rem auto auto auto;
+    background-color: var(--white);
+    box-shadow: .2rem .2rem var(--gray);
+    border-radius: 1rem;
+  }
+}
